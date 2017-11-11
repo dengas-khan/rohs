@@ -4,16 +4,13 @@ import player
 def start_turn(player):
     def gain_devotion():
         x = input('Enter which devotion to gain: ')
-        elements = ['earth', 'fire', 'water', 'wind', 'lightning']
-        try:
-            x in elements
-            return x
-        except:
+        elements = [player.devotion1, player.devotion2]
+        if x in elements:
+            player.x = player.x + 1
+            return player.x
+        else:
             return gain_devotion()
-        y = gain_devotion()
-        player.y = player.y + 1
-        print(player.y)
-
+            
 def main():
     x = random.randrange(1, 3)
     if x == 1:
