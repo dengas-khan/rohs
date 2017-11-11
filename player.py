@@ -5,20 +5,18 @@ class Hero(object):
         def get_devotion1():
             x = input('Enter your primary devotion ' + self.name + ': ')
             elements = ['earth', 'fire', 'water', 'wind', 'lightning']
-            try:
-                x in elements
+            if x in elements:
                 return x
-            except:
+            else:
                 return get_devotion1()
         def get_devotion2():
             y = input('Enter your second devotion ' + self.name + ': ')
             elements = ['earth', 'fire', 'water', 'wind', 'lightning']
-            try:
-                if y in elements:
-                    return y
-                elif y == 'none':
-                    return None
-            except:
+            if y in elements:
+                return y
+            elif y == 'none':
+                return None
+            else:
                 return get_devotion2()
             
         self.devotion1 = get_devotion1()
